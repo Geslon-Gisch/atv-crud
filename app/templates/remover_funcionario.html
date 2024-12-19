@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remover Funcionário</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <h2>Tem certeza que deseja remover o funcionário "{{ object.nome }}"?</h2>
+    <ul>
+        <li>Email: {{ object.email }}</li>
+        <li>Remuneração: {{ object.remuneracao }}</li>
+    </ul>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+        <a href="{% url 'lista_funcionarios' %}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</body>
+</html>

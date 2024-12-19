@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Funcionário</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+    <h2>Detalhes do Funcionário</h2>
+    <ul>
+        <li>Nome: {{ fun.nome }}</li>
+        <li>Email: {{ fun.email }}</li>
+        <li>Remuneração: {{ fun.remuneracao }}</li>
+        <li>Data de Nascimento: {{ fun.data_nascimento }}</li>
+    </ul>
+    <a href="{% url 'lista_funcionarios' %}" class="btn btn-secondary">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load bootstrap5 %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Funcionário</title>
+    <!-- CSS Bootstrap -->
+    {% bootstrap_css %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-custom {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Cadastro de Funcionário</h2>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form form layout='horizontal' %}
+            <button type="submit" class="btn btn-primary btn-custom">Salvar</button>
+        </form>
+        <a href="{% url 'lista_funcionarios' %}" class="btn btn-secondary btn-custom mt-2">Voltar</a>
+    </div>
+    <!-- JS Bootstrap -->
+    {% bootstrap_javascript %}
+</body>
+</html>
